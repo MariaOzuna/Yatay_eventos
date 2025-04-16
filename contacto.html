@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Yatay Eventos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary  border-bottom border-body" ">
+            <div class="container-fluid">
+               <a class="navbar-brand" href="#">
+                    <img src="imagenes/icono yatay.png" alt="Eventos Yatay" width="60" height="40" class="d-inline-block align-text-top align-left">         
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="institucional.html">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contacto">
+            <h2>Contacto</h2>
+            <p>Puedes contactarnos a través de los siguientes medios:</p>
+            <p><strong>Dirección:</strong> Calle Yatay 123, Entre Ríos, Argentina</p>
+            <p><strong>Correo electrónico:</strong> contacto@yatayeventos.com</p>
+            <p><strong>Teléfono:</strong> +54 (345) 123-4567</p>
+            <p><strong>Días y horarios de atención:</strong> Lunes a Viernes de 9:00 a 18:00 hs y Sábados de 9:00 a 13:00 hs</p>
+
+            <h3>Escríbenos un mensaje</h3>
+            <form action="#" method="post">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+
+                <label for="email">Correo electrónico:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="asunto">Asunto:</label><br>
+                <input type="text" id="asunto" name="asunto" required><br><br>
+
+                <label for="mensaje">Mensaje:</label><br>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br><br>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Derechos reservados &copy; 2025 Yatay Eventos</p>
+    </footer>
+</body>
+</html>
