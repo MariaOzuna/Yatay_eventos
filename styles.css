@@ -1,5 +1,5 @@
 
-header {
+/*header {
     background-color: #4FC3F7; 
     color: rgb(223, 247, 8);
     padding: 15px;
@@ -15,7 +15,7 @@ header {
         flex-direction: column;
         align-items: flex-start;
     }
-}
+}*/
 
 body {
     font-family: 'Arial', sans-serif;
@@ -27,7 +27,6 @@ body {
     color: #0a0a0a;
 }
 
-/* Trabajamos estilos en Header */
 
 header h1 {
     margin: 0;
