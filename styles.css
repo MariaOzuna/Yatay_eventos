@@ -1,3 +1,89 @@
+<<<<<<< HEAD
+
+=======
+header {
+    background-color: #4FC3F7; 
+    color: rgb(223, 247, 8);
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    font-size-adjust: 30px;
+    margin: 0;
+    padding: 0;
+    line-height: 2.0;
+    background-color: #fc9b0b;
+    color: #0a0a0a;
+}
+
+/* Trabajamos estilos en Header */
+
+header h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    font-family:'Courier New', Courier, monospace;
+    color:#FB8C00
+    background-image url("https://imagenes/logo-yatay-t.png");
+}
+
+
+
+main {
+    padding: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: rgb(200, 255, 202);
+    border-radius: 10px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2, h3 {
+    color: #FFA726;
+}
+
+
+a {
+    color: #030303;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+ul {
+    padding-left: 20px;
+}
+
+
+footer {
+    background-color: #4FC3F7; 
+    color: #fff176;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+
+>>>>>>> 97430bfb94ae2cbbf75b9ff16d7806abe8fe6e36
+
 .formulario-contacto label {
     font-weight: bold;
     margin-top: 10px;
