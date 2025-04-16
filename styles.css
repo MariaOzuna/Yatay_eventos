@@ -1,0 +1,28 @@
+.formulario-contacto label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.formulario-contacto button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #0fd2e0;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.formulario-contacto button:hover {
+    background-color: #1099a3;
+}
