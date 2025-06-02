@@ -1,16 +1,44 @@
 // ==================== DATOS INICIALES ====================
 const salonesIniciales = [
-  {
-    id: 1,
-    nombre: "Salón Ava",
-    capacidad: 70,
-    ubicacion: "Las Palmeras y Tala, Zona Norte",
-    precio: 200000,
-    descripcion: "Amplio salón techado para fiestas infantiles",
-    imagen: ""
-  },
-  // ... (agrega los demás salones iniciales aquí)
-];
+ {
+      id: 1,
+      nombre: "Salón Ava",
+      capacidad: 70,
+      ubicacion: "Zona NorteLas Palmeras y Tala",
+      precio: 200000,
+      descripcion: "Amplio salón techado para fiestas infantiles",
+      imagen: "/imagenes/ava1.jpg, /imagenes/ava2.jpg, /imagenes/ava3.jpg" // Aquí podrías poner un link o base64 si quieres
+    },
+    {
+        id: 2,
+        nombre: "Salón Rosa",
+        capacidad: 100,
+        ubicacion: "Centro, Urquiza y Corrientes",
+        precio: 220000,
+        descripcion: "Salón elegante para bodas y eventos corporativos",
+        imagen: "/imagenes/salon_rosa1.jpg, /imagenes/salon_rosa2.jpg, /imagenes/salon_rosa3.jpg"
+      }, 
+      {
+        id: 3,
+        nombre: "Salón Tornasol",
+        capacidad: 120,
+        ubicacion: "Centro, Urquiza y Montevideo",
+        precio: 220000,
+        descripcion: "Salón elegante para bodas y eventos corporativos",
+        imagen: "/imagenes/salon-tornasol1.jpg, /imagenes/salon-tornasol2.jpg, /imagenes/salon-tornasol3.jpg"
+      },
+      {
+        id: 4,
+        nombre: "Salón Campestre",
+        capacidad: 100,
+        ubicacion: "sur, 9de julio y Costanera",
+        precio: 190000,
+        descripcion: "Salón elegante para bodas y eventos corporativos",
+        imagen: "/imagenes/campestre1.jpg, /imagenes/campestre2.jpg, /imagenes/campestre3.jpg"
+      }
+      
+  ];
+  
 
 // ==================== INICIALIZACIÓN ====================
 if (!localStorage.getItem('salones')) {
