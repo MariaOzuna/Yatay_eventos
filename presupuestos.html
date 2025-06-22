@@ -1,0 +1,24 @@
+<h2>Generar presupuesto para tu evento</h2>
+
+<form id="presupuestoForm">
+  <label for="nombre">Nombre del visitante:</label>
+  <input type="text" id="nombre" required />
+
+  <label for="salon">Seleccioná un salón:</label>
+  <select id="salon" required>
+    <option value="200000">Salón Ava ($200.000)</option>
+    <option value="15000">Salón Purpura ($125.000)</option>
+    <option value="150000">Salón Tornasol ($150.000)</option>
+    <option value="100000">Salón Rosa ($100.000)</option>
+   <option value="90000">Salón Campestre ($90.000)</option>
+  </select>
+
+  <p>Servicios adicionales:</p>
+  <label><input type="checkbox" value="30000" /> Catering ($30.000)</label><br />
+  <label><input type="checkbox" value="20000" /> DJ ($20.000)</label><br />
+  <label><input type="checkbox" value="15000" /> Decoración ($15.000)</label><br />
+
+  <button type="submit">Calcular presupuesto</button>
+</form>
+
+<div id="resultadoPresupuesto"></div>

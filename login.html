@@ -55,21 +55,21 @@
 </body>
 <script>
     if (localStorage.getItem('loggedIn') === 'true') {
-        window.location.href = 'altaSalon.html'; // Redirigir si ya está logueado
+        window.location.href = 'altaSalon.html'; 
     }
     document.getElementById('loginForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        // Capturar valores correctamente
+       
         const usuario = document.getElementById('usuario').value;
         const contraseña = document.getElementById('contraseña').value;
         
         if (usuario==='admin' && contraseña === '1234') { 
             localStorage.setItem('loggedIn', 'true'); 
             sessionStorage.setItem('usuario', 'admin');
-            window.location.href = 'altaSalon.html'; // Redirección válida
+            window.location.href = 'altaSalon.html'; 
         } else {
-            alert('Contraseña incorrecta. Puedes inténtarlo de nuevo');
+            alert('Contraseña incorrecta. Prueba nuevamente.'); 
         }
     });
 </script>
