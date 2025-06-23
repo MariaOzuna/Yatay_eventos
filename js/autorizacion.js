@@ -1,6 +1,6 @@
 export async function login (username, password) {
     try {
-        const response = await fetch("https://dummyjson.com/autorizacion/log", {
+        const response = await fetch("https://dummyjson.com/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -11,19 +11,13 @@ export async function login (username, password) {
             console.error ("Datos erroneos");
             return false;
         }
-        console.log (response);
-        const usuarios = await response.json();
-        
-        const userOk= usuarios.find(user => user.username === username && user.password === password);
-        console.log("userOk : "+ JSON.stringify(userOk));
-        if (userOk) {
-            localStorage.setItem("usuario", JSON.stringify(userOk));
-            return true;
-        } else {
-            return false;
-        }
-    }
-    catch (error) {
-        console.error("Error al cargar los usuarios:");
+        const user = await response.json();
+        console.log("Usuario autenticado:", user);
+        localStorage.setItem("usuario", JSON.stringify(user));
+        return true;
+
+    } catch (error) {
+        console.error("Error al iniciar sesión:", error);
         return false;
-    } }
+    }
+}
