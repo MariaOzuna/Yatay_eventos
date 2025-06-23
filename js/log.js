@@ -9,12 +9,12 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     
 
     try {
-        const usuarioExitoso = await login(usuario, contraseña);
-        if (usuarioExitoso) {
-            sessionStorage.setItem("usuario", usuarioExitoso.username);
+        const user = await login(usuario, contraseña);
+        if (user) {
+            sessionStorage.setItem("usuario", user.username);
             sessionStorage.setItem("loggedIn", "true");
             alert("Inicio de sesión exitoso");
-            window.location.href = "../altasalon.html"; // redirección
+            window.location.href = "../altaSalon.html"; 
         } else {
             alert("Usuario o contraseña incorrectos");
         }
