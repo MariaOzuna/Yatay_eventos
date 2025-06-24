@@ -1,3 +1,4 @@
+
 <h2>Generar presupuesto para tu evento</h2>
 
 <form id="presupuestoForm">
@@ -7,7 +8,7 @@
   <label for="salon">Seleccioná un salón:</label>
   <select id="salon" required>
     <option value="200000">Salón Ava ($200.000)</option>
-    <option value="15000">Salón Purpura ($125.000)</option>
+    <option value="150000">Salón Purpura ($125.000)</option>
     <option value="150000">Salón Tornasol ($150.000)</option>
     <option value="100000">Salón Rosa ($100.000)</option>
    <option value="90000">Salón Campestre ($90.000)</option>
@@ -15,10 +16,78 @@
 
   <p>Servicios adicionales:</p>
   <label><input type="checkbox" value="30000" /> Catering ($30.000)</label><br />
-  <label><input type="checkbox" value="20000" /> DJ ($20.000)</label><br />
+  <label><input type="checkbox" value="20000" /> Animadores ($20.000)</label><br />
   <label><input type="checkbox" value="15000" /> Decoración ($15.000)</label><br />
+  <label><input type="checkbox" value="10000" /> Fotografía ($10.000)</label><br />
+  <label><input type="checkbox" value="5000" /> Disfrazados segun Tematica ($5.000)</label><br />
 
   <button type="submit">Calcular presupuesto</button>
 </form>
 
 <div id="resultadoPresupuesto"></div>
+
+<script>
+   
+    function sumatoria(servicios) {
+      let total = 0;
+      for (let i = 0; i < servicios.length; i++) {
+        total += servicios[i];
+      }
+      return total;
+    }
+  
+    function presupuestos(salon, servicios) {
+      const totServ = sumatoria(servicios);
+      return totServ + salon;
+    }
+  
+    function guardarPresupuesto(presupuesto) {
+      let historial = JSON.parse(localStorage.getItem("historialPresupuestos")) || [];
+      historial.push(presupuesto);
+      localStorage.setItem("historialPresupuestos", JSON.stringify(historial));
+    }
+  
+    
+    document.getElementById("presupuestoForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+  
+      const nombre = document.getElementById("nombre").value.trim();
+      const salonSelect = document.getElementById("salon");
+      const salonPrecio = parseInt(salonSelect.value);
+      const salonNombre = salonSelect.options[salonSelect.selectedIndex].text;
+  
+      const serviciosCheckbox = document.querySelectorAll('input[type="checkbox"]:checked');
+      const servicios = [];
+      const serviciosNombres = [];
+      serviciosCheckbox.forEach(chk => {
+        servicios.push(parseInt(chk.value));
+        serviciosNombres.push(chk.parentElement.textContent.trim());
+      });
+  
+      // Calculos totales
+      const totalPresupuesto = presupuestos(salonPrecio, servicios);
+  
+      const presupuesto = {
+        nombre,
+        salon: salonNombre,
+        servicios: serviciosNombres,
+        total: totalPresupuesto,
+        fecha: new Date().toLocaleString()
+      };
+  
+      // Guardar presupuesto
+      guardarPresupuesto(presupuesto);
+  
+     
+      const resultadoDiv = document.getElementById("resultadoPresupuesto");
+      resultadoDiv.innerHTML = `
+        <h3>Presupuesto para ${nombre}</h3>
+        <p><strong>Salón seleccionado:</strong> ${salonNombre}</p>
+        <p><strong>Servicios adicionales:</strong></p>
+        <ul>${serviciosNombres.length > 0 ? serviciosNombres.map(s => `<li>${s}</li>`).join("") : "<li>Sin servicios adicionales</li>"}</ul>
+        <p><strong>Total final:</strong> $${totalPresupuesto.toLocaleString()}</p>
+        <p><em>Presupuesto guardado correctamente.</em></p>
+        <p><em>Gracias por pensar en nosotros. Sera un momento unico.</em></p>
+      `;
+    });
+  </script>
