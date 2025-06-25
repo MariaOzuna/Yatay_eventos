@@ -14,45 +14,76 @@
   </script>
 </head>
 <body>
-  <header class="bg-primary text-white py-3">
-    <div class="container d-flex justify-content-between align-items-center">
-      <h1 class="h5 m-0">Gestión de Servicios</h1>
-      <a href="administradores.html" class="btn btn-light btn-sm">Volver al Panel</a>
-    </div>
+  <header >
+    <nav class="navbar navbar-expand-lg border-bottom border-body">
+            <div class="container-fluid">
+               <a class="navbar-brand" href="#">
+                    <img src="imagenes/icono yatay.png" alt="Eventos Yatay" width="60" height="40" class="d-inline-block align-text-top align-left">         
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="institucional.html">Acerca de</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="altasalon.html">Salones</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+    </nav>
+   
   </header>
 
-  <main class="container py-4">
-    <h2>Registrar / Editar Servicio</h2>
-    <form id="form-servicio" class="mb-4">
-      <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre del Servicio</label>
-        <input type="text" class="form-control" id="nombre" required>
+  <main>
+    <section  class="container py-4">
+      <h2>Registrar / Editar Servicio</h2>
+      <div  class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="administradores.html" class="btn btn-light btn-sm">Volver al Panel</a>
       </div>
-      <div class="mb-3">
-        <label for="descripcion" class="form-label">Descripción</label>
-        <textarea class="form-control" id="descripcion" rows="2" required></textarea>
-      </div>
-      <input type="hidden" id="indice-edicion" value="-1">
-      <button type="submit" class="btn btn-success">Guardar Servicio</button>
-    </form>
+      <form id="form-servicio" class="mb-4">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre del Servicio</label>
+          <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripción</label>
+          <textarea class="form-control" id="descripcion" rows="2" required></textarea>
+        </div>
+        <input type="hidden" id="indice-edicion" value="-1">
+        <button type="submit" class="btn btn-success">Guardar Servicio</button>
+      </form>
 
-    <h2>Lista de Servicios</h2>
-    <table class="table table-bordered table-striped" id="tabla-servicios">
-      <thead class="table-primary">
-        <tr>
-          <th>Nombre</th>
-          <th>Descripción</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+      <h2>Lista de Servicios</h2>
+      <table class="table table-bordered table-striped" id="tabla-servicios">
+        <thead class="table-primary">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
   </main>
 
-  <footer class="bg-light text-center py-3">
-    <p>Yatay Eventos. Todos los derechos reservados.</p>
+  <footer>
+        <div class="container-fluid text-center" >
+            <p>Derechos reservados &copy; 2025 Yatay Eventos</p> 
+        </div>
   </footer>
-
   <script src="js/servicios.js"></script>
 </body>
 </html>

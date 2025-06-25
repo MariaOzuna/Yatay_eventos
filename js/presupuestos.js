@@ -25,23 +25,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function guardarPresupuesto(presupuesto) {
-    let historial = JSON.parse(localStorage.getItem("historialPresupuestos")) || [];
+    let historial =
+      JSON.parse(localStorage.getItem("historialPresupuestos")) || [];
     historial.push(presupuesto);
     localStorage.setItem("historialPresupuestos", JSON.stringify(historial));
   }
 
   function mostrarPresupuestosEnTabla() {
-    let historial = JSON.parse(localStorage.getItem("historialPresupuestos")) || [];
+    let historial =
+      JSON.parse(localStorage.getItem("historialPresupuestos")) || [];
     if (tablaBody) {
       tablaBody.innerHTML = "";
-      historial.forEach(p => {
+      historial.forEach((p) => {
         const fila = document.createElement("tr");
         fila.innerHTML = `
           <td>${p.id}</td>
           <td>${p.nombreCompleto}</td>
           <td>${p.fecha}</td>
           <td>${p.tematica}</td>
-          <td><ul>${p.serviciosSeleccionados.map(s => `<li>${s}</li>`).join("")}</ul></td>
+          <td><ul>${p.serviciosSeleccionados
+            .map((s) => `<li>${s}</li>`)
+            .join("")}</ul></td>
           <td>$${p.valorTotal.toLocaleString()}</td>
         `;
         tablaBody.appendChild(fila);
@@ -59,7 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const salonPrecio = parseInt(salonSelect.value);
       const salonNombre = salonSelect.options[salonSelect.selectedIndex].text;
 
-      const serviciosCheckbox = document.querySelectorAll('input[type="checkbox"]:checked');
+      const serviciosCheckbox = document.querySelectorAll(
+        'input[type="checkbox"]:checked'
+      );
       const servicios = [];
       const serviciosNombres = [];
 

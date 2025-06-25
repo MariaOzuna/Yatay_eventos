@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const data = await response.json(); // analizamos los datos del JSON
       const usuarios = data.users;
 
-      usuarios.forEach(usuario => {
+      usuarios.forEach((usuario) => {
         const fila = document.createElement("tr");
         fila.innerHTML = `
           <td>${usuario.id}</td>
@@ -23,17 +23,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.error("Error al cargar los usuarios:", response.status);
       throw Error("error al cargar los usuarios");
     }
-
   } catch (error) {
     console.error("Error al cargar los usuarios:", error);
   }
 
-  
   document.getElementById("logout").addEventListener("click", () => {
     sessionStorage.clear();
     window.location.href = "login.html";
   });
 });
-
-  
-  

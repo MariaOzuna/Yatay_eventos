@@ -39,37 +39,39 @@
         </nav>
         
     </header> 
-    <main class="container py-5">
-        <h2> Formulario Alta de Salon</h2>
-        <form id="altaSalonForm">
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre del Salón</label>
-                <input type="text" class="form-control" id="nombre" required />
-            </div>
-            <div class="mb-3">
-                <label for="capacidad" class="form-label">Capacidad</label>
-                <input type="number" class="form-control" id="capacidad" required />
-            </div>
-            <div class="mb-3">
-                <label for="ubicacion" class="form-label">Ubicación</label>
-                <input type="text" class="form-control" id="ubicacion" required />
-            </div>
-            <div class="mb-3">
-                <label for="precio" class="form-label">Precio por Hora</label>
-                <input type="number" class="form-control" id="precio" required />
-            
-            </div> 
-            <div class="mb-3">
-                <label for="imagen" class="form-label">Imagen del Salón</label>
-                <input type="file" class="form-control" id="imagen" accept="image/*"/>
-            </div>
-            <div class="mb-3">
-                <label for="descripcion" class="form-label">Descripción</label>
-                <textarea class="form-control" id="descripcion" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Registrar Salón</button>
-        </form>
-        </main> 
+    <main>
+        <section class="container py-5">
+            <h2> Formulario Alta de Salon</h2>
+            <form id="altaSalonForm">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre del Salón</label>
+                    <input type="text" class="form-control" id="nombre" required />
+                </div>
+                <div class="mb-3">
+                    <label for="capacidad" class="form-label">Capacidad</label>
+                    <input type="number" class="form-control" id="capacidad" required />
+                </div>
+                <div class="mb-3">
+                    <label for="ubicacion" class="form-label">Ubicación</label>
+                    <input type="text" class="form-control" id="ubicacion" required />
+                </div>
+                <div class="mb-3">
+                    <label for="precio" class="form-label">Precio por Hora</label>
+                    <input type="number" class="form-control" id="precio" required />
+                
+                </div> 
+                <div class="mb-3">
+                    <label for="imagen" class="form-label">Imagen del Salón</label>
+                    <input type="file" class="form-control" id="imagen" accept="image/*"/>
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="descripcion" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Registrar Salón</button>
+            </form>
+        </section>
+     
 
         <h3 class="text-center mt-5">Listado Salones</h3>
         <table class="table table-striped" id="tablaSalones">
@@ -91,11 +93,11 @@
         <div class="text-center mt-3">
             <button id="btnRegistrar" class="btn btn-success">Registrar</button>
         </div>
-        
-        <footer>
-            <div class="container text-center py-4">
-                <p>Yatay Eventos 2025. Todos los derechos reservados. Redes sociales</p>
-            </footer>
+    </main>    
+    <footer>
+        <div class="container text-center py-4">
+            <p>Yatay Eventos 2025. Todos los derechos reservados. Redes sociales</p>
+    </footer>
     <script src="/js/salones.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
