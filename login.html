@@ -29,23 +29,24 @@
       </div>
     </nav>
   </header>
+  <main>
+    <div class="container py-5">
+      <h3 class="text-center mb-4">Iniciar Sesión</h3>
+      <form id="loginForm" class="col-md-6 offset-md-3">
+        <div class="mb-3">
+          <label for="usuario" class="form-label">Usuario</label>
+          <input type="text" class="form-control" id="usuario" required />
+        </div>
+        <div class="mb-3">
+          <label for="contraseña" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="contraseña" required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+      </form>
+    </div>
+  </main>
 
-  <div class="container py-5">
-    <h3 class="text-center mb-4">Iniciar Sesión</h3>
-    <form id="loginForm" class="col-md-6 offset-md-3">
-      <div class="mb-3">
-        <label for="usuario" class="form-label">Usuario</label>
-        <input type="text" class="form-control" id="usuario" required />
-      </div>
-      <div class="mb-3">
-        <label for="contraseña" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="contraseña" required />
-      </div>
-      <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
-    </form>
-  </div>
-
-  <footer class="bg-light text-center py-3">
+  <footer class="container-fluid text-center">
     <p>© 2025 Yatay Eventos. Todos los derechos reservados.</p>
   </footer>
 
@@ -83,6 +84,8 @@
         alert('Usuario o contraseña incorrectos.');
       }
     });
+
+    
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>

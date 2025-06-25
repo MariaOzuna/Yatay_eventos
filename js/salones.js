@@ -1,4 +1,3 @@
-// ==================== DATOS INICIALES ====================
 const salonesIniciales = [
  {
       id: 1,
@@ -7,7 +6,7 @@ const salonesIniciales = [
       ubicacion: "Zona NorteLas Palmeras y Tala",
       precio: 200000,
       descripcion: "Amplio salón techado para fiestas infantiles",
-      imagen: "/imagenes/ava1.jpg, /imagenes/ava2.jpg, /imagenes/ava3.jpg" // Aquí podrías poner un link o base64 si quieres
+      imagen: "/imagenes/ava1.jpg, /imagenes/ava2.jpg, /imagenes/ava3.jpg" 
     },
     {
         id: 2,
@@ -40,12 +39,10 @@ const salonesIniciales = [
   ];
   
 
-// ==================== INICIALIZACIÓN ====================
 if (!localStorage.getItem('salones')) {
   localStorage.setItem('salones', JSON.stringify(salonesIniciales));
 }
 
-// ==================== FUNCIONES GLOBALES ====================
 function obtenerSalones() {
   return JSON.parse(localStorage.getItem('salones')) || [];
 }
@@ -54,7 +51,6 @@ function guardarSalones(salones) {
   localStorage.setItem('salones', JSON.stringify(salones));
 }
 
-// ==================== MOSTRAR SALONES ====================
 function mostrarSalones() {
   const tbody = document.getElementById("salonesList");
   if (!tbody) return;
@@ -81,7 +77,6 @@ function mostrarSalones() {
   });
 }
 
-// ==================== CRUD ====================
 function verSalon(id) {
   const salon = obtenerSalones().find(s => s.id === id);
   if (!salon) return alert("Salón no encontrado");
@@ -109,7 +104,6 @@ function eliminarSalon(id) {
   mostrarSalones();
 }
 
-// ==================== FORMULARIO ====================
 document.getElementById("altaSalonForm")?.addEventListener("submit", function(e) {
   e.preventDefault();
   const form = e.target;
@@ -138,7 +132,6 @@ document.getElementById("altaSalonForm")?.addEventListener("submit", function(e)
   }
 });
 
-// ==================== INICIO ====================
 document.addEventListener("DOMContentLoaded", function() {
   // Validar sesión
   if (localStorage.getItem('loggedIn') !== 'true' && !window.location.href.includes("login.html")) {

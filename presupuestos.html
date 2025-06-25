@@ -31,60 +31,63 @@
     </nav>
   </header>
 
-  <main class="container py-4">
-    <h2 class="mb-4">Presupuestos - Yatay Eventos</h2>
+  <main >
+    <div class="container py-4">
+      <h2 class="mb-4">Presupuestos - Yatay Eventos</h2>
 
-    <!-- VISITANTE: Formulario -->
-    <section id="formularioPresupuesto" style="display: none;">
-      <form id="presupuestoForm" class="mb-4">
-        <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre:</label>
-          <input type="text" id="nombre" class="form-control" required />
-        </div>
+      <!-- VISITANTE: Formulario -->
+      <section id="formularioPresupuesto" style="display: none;">
+        <form id="presupuestoForm" class="mb-4">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" id="nombre" class="form-control" required />
+          </div>
 
-        <div class="mb-3">
-          <label for="salon" class="form-label">Seleccioná un salón:</label>
-          <select id="salon" class="form-select" required>
-            <option value="200000">Salón Ava ($200.000)</option>
-            <option value="150000">Salón Púrpura ($150.000)</option>
-            <option value="150000">Salón Tornasol ($150.000)</option>
-            <option value="100000">Salón Rosa ($100.000)</option>
-            <option value="90000">Salón Campestre ($90.000)</option>
-          </select>
-        </div>
+          <div class="mb-3">
+            <label for="salon" class="form-label">Seleccioná un salón:</label>
+            <select id="salon" class="form-select" required>
+              <option value="200000">Salón Ava ($200.000)</option>
+              <option value="150000">Salón Púrpura ($150.000)</option>
+              <option value="150000">Salón Tornasol ($150.000)</option>
+              <option value="100000">Salón Rosa ($100.000)</option>
+              <option value="90000">Salón Campestre ($90.000)</option>
+            </select>
+          </div>
 
-        <div class="mb-3">
-          <p>Servicios adicionales:</p>
-          <div class="form-check"><input class="form-check-input" type="checkbox" value="30000" id="catering"><label class="form-check-label" for="catering">Catering ($30.000)</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" value="20000" id="animadores"><label class="form-check-label" for="animadores">Animadores ($20.000)</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" value="15000" id="decoracion"><label class="form-check-label" for="decoracion">Decoración ($15.000)</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" value="10000" id="fotografia"><label class="form-check-label" for="fotografia">Fotografía ($10.000)</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" value="5000" id="disfrazados"><label class="form-check-label" for="disfrazados">Disfrazados ($5.000)</label></div>
-        </div>
+          <div class="mb-3">
+            <p>Servicios adicionales:</p>
+            <div class="form-check"><input class="form-check-input" type="checkbox" value="30000" id="catering"><label class="form-check-label" for="catering">Catering ($30.000)</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" value="20000" id="animadores"><label class="form-check-label" for="animadores">Animadores ($20.000)</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" value="15000" id="decoracion"><label class="form-check-label" for="decoracion">Decoración ($15.000)</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" value="10000" id="fotografia"><label class="form-check-label" for="fotografia">Fotografía ($10.000)</label></div>
+            <div class="form-check"><input class="form-check-input" type="checkbox" value="5000" id="disfrazados"><label class="form-check-label" for="disfrazados">Disfrazados ($5.000)</label></div>
+          </div>
 
-        <button type="submit" class="btn btn-primary">Calcular presupuesto</button>
-      </form>
+          <button type="submit" class="btn btn-primary">Calcular presupuesto</button>
+        </form>
 
-      <div id="resultadoPresupuesto"></div>
-    </section>
+        <div id="resultadoPresupuesto"></div>
+      </section>
+    
 
     <!-- ADMIN: Tabla de presupuestos -->
-    <section id="tablaPresupuestos" style="display: none;">
-      <h3 class="mt-4">Presupuestos generados</h3>
-      <table class="table table-bordered table-striped">
-        <thead class="table-dark">
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Fecha</th>
-            <th>Temática</th>
-            <th>Servicios</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody id="tablaPresupuestosBody"></tbody>
-      </table>
-    </section>
+      <section id="tablaPresupuestos" style="display: none;">
+        <h3 class="mt-4">Presupuestos generados</h3>
+        <table class="table table-bordered table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Temática</th>
+              <th>Servicios</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="tablaPresupuestosBody"></tbody>
+        </table>
+      </section>
+    </div>
   </main>
   <footer>
         <div class="container-fluid text-center" >
