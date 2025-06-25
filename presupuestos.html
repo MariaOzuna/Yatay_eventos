@@ -1,5 +1,12 @@
 
-<h2>Generar presupuesto para tu evento</h2>
+<h2>Genera el presupuesto para tu evento</h2>
+<script>
+  if (!sessionStorage.getItem("token")) {
+    alert("Acceso denegado. Debes iniciar sesión.");
+    window.location.href = "login.html";
+  }
+</script>
+
 
 <form id="presupuestoForm">
   <label for="nombre">Nombre del visitante:</label>
