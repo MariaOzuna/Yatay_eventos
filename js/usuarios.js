@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const tabla = document.querySelector("#UsuariosTabla tbody");
+    const tabla = document.querySelector("#usuariosTabla tbody");
   
     try {
       const response = await fetch("https://dummyjson.com/users");
@@ -11,11 +11,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         usuarios.forEach(usuario => {
           const fila = document.createElement("tr");
           fila.innerHTML = `
-            <td>${usuario.firstName}</td>
-            <td>${usuario.lastName}</td>
-            <td>${usuario.phone}</td>
-            <td>${usuario.email}</td>
-          `;
+          <td>${usuario.id}</td>
+          <td>${usuario.firstName} ${usuario.lastName}</td>
+          <td>${usuario.email}</td>
+          <td>${usuario.phone}</td>
+        `;
+        
           tabla.appendChild(fila);
         });
       } else {
