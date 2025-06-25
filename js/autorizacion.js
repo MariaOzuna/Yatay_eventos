@@ -13,7 +13,9 @@ export async function login (username, password) {
         }
         const user = await response.json();
         console.log("Usuario autenticado:", user);
-        localStorage.setItem("usuario", JSON.stringify(user));
+        sessionStorage.setItem("token", user.token);
+        sessionStorage.setItem("usuario", user.username); 
+
         return true;
 
     } catch (error) {

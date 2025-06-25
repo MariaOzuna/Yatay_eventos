@@ -6,15 +6,12 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
     const usuario = document.getElementById("usuario").value;
     const contraseña = document.getElementById("contraseña").value;
 
-    
-
     try {
-        const user = await login(usuario, contraseña);
-        if (user) {
-            sessionStorage.setItem("usuario", user.username);
-            sessionStorage.setItem("loggedIn", "true");
+        const loginExitoso = await login(usuario, contraseña);
+
+        if (loginExitoso) {
             alert("Inicio de sesión exitoso");
-            window.location.href = "../altaSalon.html"; 
+            window.location.href = "administradores.html"; 
         } else {
             alert("Usuario o contraseña incorrectos");
         }
