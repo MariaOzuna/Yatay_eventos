@@ -1,19 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
   const token = sessionStorage.getItem("token");
-  const esAdmin = !!token;
+  const esAdmin = token && token.trim() !== "";
 
   const formularioSection = document.getElementById("formularioPresupuesto");
   const tablaSection = document.getElementById("tablaPresupuestos");
+  const adminButtons = document.getElementById("adminButtons");
   const form = document.getElementById("presupuestoForm");
   const resultadoDiv = document.getElementById("resultadoPresupuesto");
   const tablaBody = document.getElementById("tablaPresupuestosBody");
 
-  // Mostrar secciones según tipo de usuario
+  // Mostrar u ocultar según el tipo de usuario
   if (esAdmin) {
-    tablaSection.style.display = "block";
+    tablaSection.classList.remove("d-none");
+    adminButtons.classList.remove("d-none");
     mostrarPresupuestosEnTabla();
   } else {
-    formularioSection.style.display = "block";
+    formularioSection.classList.remove("d-none");
+    tablaSection?.remove();      // elimina completamente si no sos admin
+    adminButtons?.remove();      // elimina botones si no sos admin
   }
 
   function sumatoria(servicios) {
@@ -34,28 +38,23 @@ document.addEventListener("DOMContentLoaded", () => {
   function mostrarPresupuestosEnTabla() {
     let historial =
       JSON.parse(localStorage.getItem("historialPresupuestos")) || [];
-    if (tablaBody) {
-      tablaBody.innerHTML = "";
-      historial.forEach((p) => {
-        const fila = document.createElement("tr");
-        fila.innerHTML = `
-          <td>${p.id}</td>
-          <td>${p.nombreCompleto}</td>
-          <td>${p.fecha}</td>
-          <td>${p.tematica}</td>
-          <td><ul>${p.serviciosSeleccionados
-            .map((s) => `<li>${s}</li>`)
-            .join("")}</ul></td>
-          <td>$${p.valorTotal.toLocaleString()}</td>
-        `;
-        tablaBody.appendChild(fila);
-      });
-    }
+    tablaBody.innerHTML = "";
+    historial.forEach((p) => {
+      const fila = document.createElement("tr");
+      fila.innerHTML = `
+        <td>${p.id}</td>
+        <td>${p.nombreCompleto}</td>
+        <td>${p.fecha}</td>
+        <td>${p.tematica}</td>
+        <td><ul>${p.serviciosSeleccionados.map((s) => `<li>${s}</li>`).join("")}</ul></td>
+        <td>$${p.valorTotal.toLocaleString()}</td>
+      `;
+      tablaBody.appendChild(fila);
+    });
   }
 
-  // Solo visitantes pueden usar el formulario
   if (form) {
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
 
       const nombre = document.getElementById("nombre").value.trim();
