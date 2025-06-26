@@ -50,7 +50,9 @@
     <section  class="container py-4">
       <h2>Registrar / Editar Servicio</h2>
       <div  class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="administradores.html" class="btn btn-light btn-sm">Volver al Panel</a>
+        <a href="administradores.html" class="btn btn-secondary">Volver al Panel</a>
+        <button class="btn btn-danger" onclick="cerrarSesion()">
+        Cerrar sesión</button>
       </div>
       <form id="form-servicio" class="mb-4">
         <div class="mb-3">
@@ -84,6 +86,12 @@
             <p>Derechos reservados &copy; 2025 Yatay Eventos</p> 
         </div>
   </footer>
+  <script>
+      function cerrarSesion() {
+        sessionStorage.clear();
+        window.location.href = "login.html";
+      }
+    </script>
   <script src="js/servicios.js"></script>
 </body>
 </html>
