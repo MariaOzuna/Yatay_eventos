@@ -29,62 +29,63 @@
       </div>
     </nav>
   </header>
-
+  <main>
   <!-- FORMULARIO SOLO PARA ADMIN -->
-  <section class="container py-5" id="formularioSalon" style="display: none;">
-    <h2>Formulario Alta de Salón</h2>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <a href="administradores.html" class="btn btn-secondary">Volver al Panel</a>
-      <button class="btn btn-danger" onclick="cerrarSesion()">Cerrar sesión</button>
-    </div>
-    <form id="altaSalonForm">
-      <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre del Salón</label>
-        <input type="text" class="form-control" id="nombre" required />
+    <section class="container py-5" id="formularioSalon" style="display: none;">
+      <h2>Formulario Alta de Salón</h2>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="administradores.html" class="btn btn-secondary">Volver al Panel</a>
+        <button class="btn btn-danger" onclick="cerrarSesion()">Cerrar sesión</button>
       </div>
-      <div class="mb-3">
-        <label for="capacidad" class="form-label">Capacidad</label>
-        <input type="number" class="form-control" id="capacidad" required />
-      </div>
-      <div class="mb-3">
-        <label for="ubicacion" class="form-label">Ubicación</label>
-        <input type="text" class="form-control" id="ubicacion" required />
-      </div>
-      <div class="mb-3">
-        <label for="precio" class="form-label">Precio por Hora</label>
-        <input type="number" class="form-control" id="precio" required />
-      </div>
-      <div class="mb-3">
-        <label for="imagen" class="form-label">Imagen del Salón</label>
-        <input type="file" class="form-control" id="imagen" accept="image/*" />
-      </div>
-      <div class="mb-3">
-        <label for="descripcion" class="form-label">Descripción</label>
-        <textarea class="form-control" id="descripcion" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Registrar Salón</button>
-    </form>
-  </section>
+      <form id="altaSalonForm">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre del Salón</label>
+          <input type="text" class="form-control" id="nombre" required />
+        </div>
+        <div class="mb-3">
+          <label for="capacidad" class="form-label">Capacidad</label>
+          <input type="number" class="form-control" id="capacidad" required />
+        </div>
+        <div class="mb-3">
+          <label for="ubicacion" class="form-label">Ubicación</label>
+          <input type="text" class="form-control" id="ubicacion" required />
+        </div>
+        <div class="mb-3">
+          <label for="precio" class="form-label">Precio por Hora</label>
+          <input type="number" class="form-control" id="precio" required />
+        </div>
+        <div class="mb-3">
+          <label for="imagen" class="form-label">Imagen del Salón</label>
+          <input type="file" class="form-control" id="imagen" accept="image/*" />
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripción</label>
+          <textarea class="form-control" id="descripcion" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar Salón</button>
+      </form>
+    </section>
 
-  <!-- TABLA SIEMPRE VISIBLE para todos -->
-  <section class="container">
-    <h3 class="text-center mt-5">Listado Salones</h3>
-    <table class="table table-striped" id="tablaSalones">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Capacidad</th>
-          <th>Ubicación</th>
-          <th>Precio</th>
-          <th>Imagen</th>
-          <th>Descripción</th>
-          <th id="thAcciones">Acciones</th>
-        </tr>
-      </thead>
-      <tbody id="salonesList"></tbody>
-    </table>
-  </section>
-
+    <!-- TABLA SIEMPRE VISIBLE para todos -->
+    <section class="container">
+      <h3 class="text-center mt-5">Listado Salones</h3>
+      <table class="table table-striped" id="tablaSalones">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Capacidad</th>
+            <th>Ubicación</th>
+            <th>Precio</th>
+            <th>Imagen</th>
+            <th>Descripción</th>
+            <th id="thAcciones">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="salonesList"></tbody>
+      </table>
+    </section>
+  </main>
+  
   <footer>
     <div class="container text-center py-4">
       <p>Yatay Eventos 2025. Todos los derechos reservados.</p>
