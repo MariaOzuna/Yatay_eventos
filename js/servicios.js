@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const descripcionInput = document.getElementById("descripcion");
   const indiceEdicion = document.getElementById("indice-edicion");
   const tablaBody = document.querySelector("#tabla-servicios tbody");
+  const token = sessionStorage.getItem("token");
+  const esAdmin = !!token;
 
   let servicios = JSON.parse(localStorage.getItem("servicios")) || [];
 
@@ -16,8 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
           <td>${servicio.descripcion}</td>
           
           <td>
-            <button class="btn btn-sm btn-warning me-2" onclick="editarServicio(${index})">Editar</button>
-            <button class="btn btn-sm btn-danger" onclick="eliminarServicio(${index})">Eliminar</button>
+            ${
+              esAdmin
+                ? `
+              <button class="btn btn-sm btn-warning me-2" onclick="editarServicio(${index})">Editar</button>
+              <button class="btn btn-sm btn-danger" onclick="eliminarServicio(${index})">Eliminar</button>
+            `
+                : ""
+            }
           </td>
         `;
       tablaBody.appendChild(fila);
